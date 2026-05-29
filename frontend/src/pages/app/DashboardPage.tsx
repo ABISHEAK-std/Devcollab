@@ -48,7 +48,7 @@ export default function DashboardPage() {
       setDescription('');
       setWorkspaces((current) => [response.workspace, ...current]);
       await bootstrapSession();
-      navigate(`/workspace/${response.workspace.id}`);
+      navigate(`/workspace/${response.workspace._id ?? response.workspace.id}`);
     } catch (error) {
       toast.error(getApiErrorMessage(error));
     } finally {
@@ -107,7 +107,7 @@ export default function DashboardPage() {
         ) : workspaces.length ? (
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {workspaces.map((workspace) => (
-              <Link key={workspace.id} to={`/workspace/${workspace.id}`}>
+              <Link key={workspace._id} to={`/workspace/${workspace._id ?? workspace.id}`}>
                 <Card className="h-full border-border bg-surface/40 transition hover:-translate-y-1 hover:bg-surface/80">
                   <CardHeader className="border-border/40">
                     <div className="flex items-center justify-between">

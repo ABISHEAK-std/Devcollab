@@ -34,5 +34,12 @@ const workspaceSchema = new Schema(
 
 workspaceSchema.index({ owner: 1, createdAt: -1 });
 
+workspaceSchema.virtual('id').get(function() {
+  return this._id.toString();
+});
+
+workspaceSchema.set('toJSON', { virtuals: true });
+workspaceSchema.set('toObject', { virtuals: true });
+
 export type WorkspaceDocument = InferSchemaType<typeof workspaceSchema>;
 export const WorkspaceModel = model('Workspace', workspaceSchema);

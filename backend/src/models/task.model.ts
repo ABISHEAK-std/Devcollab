@@ -32,5 +32,12 @@ const taskSchema = new Schema(
 
 taskSchema.index({ project: 1, status: 1, order: 1 });
 
+taskSchema.virtual('id').get(function() {
+  return this._id.toString();
+});
+
+taskSchema.set('toJSON', { virtuals: true });
+taskSchema.set('toObject', { virtuals: true });
+
 export type TaskDocument = InferSchemaType<typeof taskSchema>;
 export const TaskModel = model('Task', taskSchema);

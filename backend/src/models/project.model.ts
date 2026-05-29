@@ -18,5 +18,12 @@ const projectSchema = new Schema(
 
 projectSchema.index({ workspace: 1, slug: 1 }, { unique: true });
 
+projectSchema.virtual('id').get(function() {
+  return this._id.toString();
+});
+
+projectSchema.set('toJSON', { virtuals: true });
+projectSchema.set('toObject', { virtuals: true });
+
 export type ProjectDocument = InferSchemaType<typeof projectSchema>;
 export const ProjectModel = model('Project', projectSchema);
