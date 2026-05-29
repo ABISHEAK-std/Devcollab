@@ -11,3 +11,9 @@ frontend/node_modules
 backend/node_modules
 frontend/dist
 backend/dist
+AUDIT_COMPLETE.md
+AUDIT_EXECUTIVE_SUMMARY.md
+AUDIT_FLOW_DIAGRAMS.md
+AUDIT_README.md
+PRODUCTION_AUDIT_REPORT.md
+QUICK_FIXES.md
