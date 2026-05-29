@@ -3,4 +3,12 @@ export const projectStatuses = ['planned', 'active', 'paused', 'archived'] as co
 export const taskStatuses = ['todo', 'in_progress', 'in_review', 'done'] as const;
 export const taskPriorities = ['low', 'medium', 'high', 'urgent'] as const;
 export const notificationTypes = ['mention', 'assignment', 'task_update', 'comment', 'system'] as const;
-export const activityTypes = ['task_created', 'task_updated', 'task_moved', 'comment_added', 'snippet_added', 'wiki_updated'] as const;
+export const activityTypes = [
+  'task_created',
+  'task_updated',
+  'task_moved',
+  'comment_added',
+  'snippet_added',
+  'wiki_updated',
+  'workspace_created'
+] as const;
